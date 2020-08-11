@@ -10,15 +10,22 @@
 </head>
 
 <body>
+  <header>
+    <nav>
+      <ul>
+        <li><%= link_to "⚙", user_session_path %></li>
+        <li><%= link_to "ロ", destroy_user_session_path, method: :delete %>
+        </li>
+        <li></li>
+      </ul>
+    </nav>
+  </header>
+
   <%= yield %>
 
   <%= csrf_meta_tags %>
   <%= javascript_include_tag "application" %>
-  <footer>
-    <%= link_to "管理", user_session_path %>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
 
-  </footer>
 </body>
 
 </html>

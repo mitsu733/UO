@@ -152,3 +152,35 @@ img {
     background-color: rgba(0, 0, 0, 0.4);
   }
 }
+
+// show
+.show-box {
+  width: 70%;
+  // margin: 100px auto;
+  // padding: 30px;
+  background-color: #fff;
+
+  .img {
+    width: 100%;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  & > ul {
+    list-style: none;
+    margin: 0 auto;
+    text-align: center;
+
+    & > li {
+      display: inline-block;
+      margin: 20px 0;
+      width: 90%;
+
+      & > p {
+        font-size: 20px;
+      }
+    }
+  }
+}

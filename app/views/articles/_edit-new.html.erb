@@ -1,0 +1,28 @@
+<%= form_for(@article) do |f| %>
+<h4>タイトル</h4>
+<%= f.text_field :title %>
+<h4>本文</h4>
+<%= f.text_area :body %>
+<h4>画像</h4>
+<%= f.file_field :image %>
+<br><br>
+<%= f.submit '投稿' %>
+<% end %>
+<br><br>
+<table>
+  <th>
+    タイトル
+  </th>
+  <th>
+    内容
+  </th>
+  <% articles.each do |article| %>
+  <tr>
+    <td><%= link_to article.title, article_path(article.id) %></td>
+    <td><%= article.body %></td>
+  </tr>
+  <% end %>
+</table>
+<br><br>
+<%= link_to "トップ", root_path %>
+<br><br>

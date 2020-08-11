@@ -1,0 +1,18 @@
+<div class="container show-box">
+  <ul>
+    <li>
+      <p class="show-title"><%= @article_item.title %></p>
+    </li>
+    <li><%= image_tag @article_item.image.to_s, class:"img" %></li>
+    <li></li>
+    <li><%= @article_item.body %></li>
+
+    <%if user_signed_in?%>
+    <li><%= link_to "編集", edit_article_path(@article_item.id) %></li>
+    <li><%= link_to "削除", destroy_article_path(@article_item.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></li>
+    <li><%= link_to "トップ", root_path %></li>
+    <li><%= link_to "戻る", articles_new_path %></li>
+    <%else%>
+    <li><%= link_to "戻る", root_path %></li>
+    <%end%>
+  </ul>
