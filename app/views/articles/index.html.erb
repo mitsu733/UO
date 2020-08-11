@@ -8,21 +8,31 @@
         </ul>
       </nav>
     </header>
-    <div id="container">
+    <div class="container user-container">
+      <div class="user-img-box"></div>
+      <div class="user-body-box">
+        <p>sssssssssssssssssss</p>
+      </div>
+    </div>
+    <div class="container">
       <div class="img-box">
+        <% @articles.each do |article| %>
+        <div class="cover-slide hover-darken inview">
+          <span><%= image_tag article.image.to_s, class:"img-zoom" %></span>
+        </div>
+        <% end %>
         <div class="cover-slide hover-darken inview">
           <img class="img-zoom" src="img/uo4-1.JPG" />
         </div>
-      </div>
-      <div class="img-box">
         <div class="cover-slide hover-darken inview">
           <img class="img-zoom" src="img/uo4-1.JPG" />
         </div>
-      </div>
-      <div class="img-box">
         <div class="cover-slide hover-darken inview">
           <img class="img-zoom" src="img/uo4-1.JPG" />
+        </div>
+        <div class="cover-slide hover-darken inview">
+          <img class="img-zoom" src="img/uo4-1.JPG" />
+
         </div>
       </div>
     </div>
-
