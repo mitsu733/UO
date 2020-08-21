@@ -13,11 +13,6 @@
  *= require_tree .
  *= require_self
  */
-header {
-  padding: 15px 0;
-  margin: 0 auto 100px;
-}
-
 header nav > ul {
   list-style: none;
   text-align: right;
@@ -30,5 +25,19 @@ header nav > ul > li {
 header nav > ul > li a {
   text-decoration: none;
   color: gray;
+}
+
+body {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+a {
+  text-decoration: underline;
+  color: #677c88;
+}
+
+a:hover {
+  color: #b2bfca;
+  text-decoration: underline;
 }
 /*# sourceMappingURL=application.css.map */

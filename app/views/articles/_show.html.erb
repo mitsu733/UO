@@ -1,0 +1,19 @@
+<div class="container show_box">
+
+  <% article_item.each do |article| %>
+  <p class="show_title"><%= article.title %></p>
+
+  <ul>
+    <li class="show_img_box"><%= image_tag article.image.to_s, class:"show_img" %></li>
+
+    <li style="word-wrap:break-word;" class="show_body"><%= raw Rinku.auto_link(h(safe_join(article.body.split("\n"),tag(:br)))) %></li>
+
+    <%if user_signed_in?%>
+    <li><%= link_to "編集", edit_article_path(article.id) %></li>
+    <li><%= link_to "削除", article_path(article.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></li>
+    <li><%= link_to "トップ", root_path %></li>
+    <%end%>
+  </ul>
+  <%end%>
+  <p class="back"><%= link_to "戻る", root_path %></p>
+</div>

@@ -1,20 +1,87 @@
   <body>
+    <div class="head-box">
+    </div>
+    <div class="container">
+      <h2>作品</h2>
+      <div class="img-box">
+        <div class="cover-slide hover-darken inview app">
+          <%= link_to app_article_path do %>
+          <img src="/img/follow.jpeg" class="img-zoom">
+          <% end %>
+        </div>
+
+        <div class="cover-slide hover-darken inview illust">
+          <%= link_to illust_article_path do %>
+          <img src="/img/illust.jpg" class="img-zoom">
+          <% end %>
+        </div>
+      </div>
+    </div>
 
     <div class="container user-container">
       <div class="user-img-box"></div>
       <div class="user-body-box">
-        <p>sssssssssssssssssss</p>
+        <h2>プロフィール</h2>
+        <table>
+          <tr>
+            <td>1988年</td>
+            <td>東京生まれ</td>
+          </tr>
+
+          <tr>
+            <td>2011年3月</td>
+            <td>文化女子大学 造形学部造形学科テキスタイルワークコース 卒業</td>
+          </tr>
+
+          <tr>
+            <td>2011年4月</td>
+            <td>共立速記印刷株式会社　入社</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>DTPオペレータとして組版を担当</td>
+          </tr>
+
+          <tr>
+            <td>2014年6月</td>
+            <td>同社の営業3課へ異動。業務委託のため大学へ出向。</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>大学事務の一部と冊子の校正を担当</td>
+          </tr>
+          <tr>
+            <td>2017年4月</td>
+            <td>共立速記印刷株式会社　退社</td>
+          </tr>
+
+          <tr>
+            <td>2017年6月</td>
+            <td>弁護士法人　子浩法律事務所　入社</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>事務所チームで郵便物を担当</td>
+          </tr>
+
+          <tr>
+            <td>2019年12月</td>
+            <td>弁護士法人　子浩法律事務所　退社</td>
+          </tr>
+
+          <tr>
+            <td>2020年1月<br>〜4月</td>
+            <td>株式会社インフラトップ DMM WEBCAMPに通学</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>HTML/CSS基礎、レスポンシブ機能の実装/Ruby基礎/Ruby on Rails/<br>
+              GitHubによるソース管理の理解と使用HTML/<br>
+              GitHubによるソース管理の理解と使用 /<br>
+              AWS(EC2 /RDS/AMI/EIP)の理解と実装AWS(EC2/RDS/AMI/EIP)の理解と実装/等</td>
+          </tr>
+        </table>
       </div>
     </div>
-    <div class="container">
-      <div class="img-box">
-        <% @articles.each do |article| %>
-        <div class="cover-slide hover-darken inview">
-          <%= link_to article_path(article.id) do %>
-          <span><%= image_tag article.image.to_s, class:"img-zoom" %></span>
-          <% end %>
-        </div>
-        <% end %>
-      </div>
-    </div>
+
     </div>

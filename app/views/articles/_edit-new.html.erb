@@ -1,8 +1,13 @@
-<%= form_for(@article) do |f| %>
+<%= form_with(model: article, local: true) do |f| %>
 <h4>タイトル</h4>
 <%= f.text_field :title %>
 <h4>本文</h4>
 <%= f.text_area :body %>
+<h4>カテゴリー</h4>
+<%= f.label :app %>
+<%= f.radio_button :category, :app %>
+<%= f.label :illust %>
+<%= f.radio_button :category, :illust %>
 <h4>画像</h4>
 <%= f.file_field :image %>
 <br><br>
@@ -16,10 +21,12 @@
   <th>
     内容
   </th>
-  <% articles.each do |article| %>
+  <% articles.each do |article_item| %>
   <tr>
-    <td><%= link_to article.title, article_path(article.id) %></td>
-    <td><%= article.body %></td>
+    <td>
+      <%= link_to article_item.title, edit_article_path(article_item.id)%>
+    </td>
+    <td><%= article_item.body %></td>
   </tr>
   <% end %>
 </table>

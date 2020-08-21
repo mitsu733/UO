@@ -15,8 +15,6 @@
  */
 
 header {
-  padding: 15px 0;
-  margin: 0 auto 100px;
   & nav {
     & > ul {
       list-style: none;
@@ -30,5 +28,17 @@ header {
         }
       }
     }
+  }
+}
+
+body {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+a {
+  text-decoration: underline;
+  color: rgb(103, 124, 136);
+  &:hover {
+    color: rgb(178, 191, 202);
+    text-decoration: underline;
   }
 }

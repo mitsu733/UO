@@ -5,7 +5,7 @@
     </li>
     <li><%= image_tag @article_item.image.to_s, class:"img" %></li>
     <li></li>
-    <li><%= @article_item.body %></li>
+    <li style="word-wrap:break-word;"><%= @article_item.body %></li>
 
     <%if user_signed_in?%>
     <li><%= link_to "編集", edit_article_path(@article_item.id) %></li>

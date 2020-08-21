@@ -3,14 +3,18 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
-  def show
-    @article_item = Article.find(params[:id])
+  def app_show
+    @article_item = Article.where(category: "app")
+  end
+  
+  def illust_show
+    @article_item = Article.where(category: "illust")
   end
   
   def destroy
     article = Article.find(params[:id]) 
     article.destroy 
-    redirect_to articles_new_path  
+    redirect_to new_article_path  
   end
 
   def edit
@@ -21,7 +25,7 @@ class ArticlesController < ApplicationController
   def update
     article = Article.find(params[:id])
     article.update(article_params)
-    redirect_to article_path(article.id)
+    redirect_to new_article_path
   end
 
   def new
@@ -33,7 +37,7 @@ class ArticlesController < ApplicationController
     article = Article.new(article_params)
     if article.save
       flash[:success] = "article successfully created"
-      redirect_to articles_new_path
+      redirect_to new_article_path
     else
       flash[:error] = "Something went wrong"
       render 'new'
@@ -47,7 +51,7 @@ class ArticlesController < ApplicationController
   
   # ストロングパラメータ
   def article_params
-    params.require(:article).permit(:title, :body, :image)
+    params.require(:article).permit(:title, :body, :image, :category)
   end
 
 end
