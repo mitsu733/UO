@@ -281,4 +281,13 @@ img {
   text-align: center;
   margin: 50px 0;
 }
+
+@media screen and (max-width: 750px) {
+  .head-box {
+    height: 250px;
+  }
+  .cover-slide {
+    margin-bottom: 30px;
+  }
+}
 /*# sourceMappingURL=articles.css.map */
